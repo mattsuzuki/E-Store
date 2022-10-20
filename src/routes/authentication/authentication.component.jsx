@@ -1,6 +1,7 @@
 // import { ContextExclusionPlugin } from "webpack";
 import { useEffect } from "react";
 import { getRedirectResult } from "firebase/auth";
+import Button from "../../components/button/button.component";
 
 import {
   auth,
@@ -11,7 +12,7 @@ import {
 
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
 
-const SignIn = () => {
+const Authetication = () => {
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
     const userDocRef = await createUserDocumentFromAuth(user);
@@ -20,10 +21,10 @@ const SignIn = () => {
   return (
     <div>
       <h1>sign in page</h1>
-      <button onClick={logGoogleUser}>Sign in With Google</button>
+      <Button onClick={logGoogleUser}>Sign in With Google</Button>
       <SignUpForm />
     </div>
   );
 };
 
-export default SignIn;
+export default Authetication;
